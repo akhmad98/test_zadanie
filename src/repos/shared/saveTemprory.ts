@@ -1,5 +1,5 @@
-import client from '../../../db/rd';
-import { IBookings } from '../../interfaces/IBookings';
+import client from '../../../db/rd.ts';
+import { IBookings } from '../../interfaces/IBookings.ts';
 
 export async function saveToTempVal(val: IBookings) {
     const keyForTemp: string = `${val.event_id}:${val.user_id}`;

@@ -1,8 +1,8 @@
-import { getFromFastAccess } from "../repos/shared/getTemprorary";
-import { saveToTempVal } from "./shared/saveTemprory";
-import pool from '../../db/db';
-import { IBody } from "../interfaces/IBody";
-import { IBookings } from "../interfaces/IBookings";
+import { getFromFastAccess } from "../repos/shared/getTemprorary.ts";
+import { saveToTempVal } from "./shared/saveTemprory.ts";
+import pool from '../../db/db.ts';
+import { IBody } from "../interfaces/IBody.ts";
+import type { IBookings } from "../interfaces/IBookings.ts";
 
 export const createBookings = async (body: IBookings) => {
     const keyForTempVal: string = `${body.event_id}:${body.user_id}`;

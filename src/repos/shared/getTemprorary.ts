@@ -1,5 +1,5 @@
-import client from '../../../db/rd';
-import { IBookings } from '../../interfaces/IBookings';
+import client from '../../../db/rd.ts';
+import { IBookings } from '../../interfaces/IBookings.ts';
 
 
 export async function getFromFastAccess(tempKey:string): Promise<IBookings | null> {
