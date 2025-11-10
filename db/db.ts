@@ -18,7 +18,7 @@ async function verifyConnection(): Promise<void> {
         console.log('Connected to PostgreSQL database');
         client.release();
     } catch (error) {
-        console.error('❌ Error connecting to the database:', error);
+        console.error('Error connecting to the database:', error);
     }
 }
 
