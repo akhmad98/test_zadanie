@@ -19,6 +19,12 @@
   "homepage": "https://github.com/akhmad98/test_zadanie#readme",
   "devDependencies": {
     "@types/node": "^24.10.0",
+    "@types/pg": "^8.15.6",
+    "@types/redis": "^4.0.10",
+    "redis": "^5.9.0",
     "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "pg": "^8.16.3"
   }
 }
