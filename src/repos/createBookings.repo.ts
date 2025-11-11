@@ -1,7 +1,7 @@
 import { getFromFastAccess } from "../repos/shared/getTemprorary.ts";
 import { saveToTempVal } from "./shared/saveTemprory.ts";
-import pool from '../../db/db.ts';
-import { IBody } from "../interfaces/IBody.ts";
+import client from '../config/outsideQueriesDb.ts';
+import type { IBody } from "../interfaces/IBody.ts";
 import type { IBookings } from "../interfaces/IBookings.ts";
 
 export const createBookings = async (body: IBookings) => {
@@ -14,7 +14,7 @@ export const createBookings = async (body: IBookings) => {
     const isSavedToTemp = await saveToTempVal(body);
     const query: string = `INSERT INTO bookings (event_id, user_id) VALUES (${body.event_id}, ${body.user_id})`;
     try {
-        const result = await pool.query(query);
+        const result = await client.query(query);
     } catch (error) {
         throw Error('Error executing query');
     }
