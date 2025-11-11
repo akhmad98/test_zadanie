@@ -15,7 +15,7 @@ async function createDatabase(): Promise<void> {
             console.log(`Database '${appDbName}' already exists.`);
         }
     } catch (error) {
-        console.error('Error creating database.');
+        console.error('Error creating database:', error);
     } finally {
         await client.end();
         console.log('PostgreSQL connection closed.');
