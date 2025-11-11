@@ -12,7 +12,7 @@ async function createTables() {
         await client.query(createEventsTable);
         console.log('Table "events" created!');
 
-        const createBookingsTable = `CREATE TABLE IF NOT EXISTS bookings (id SERIAL PRIMARY KEY, event_id INTEGER REFERENCES events(id) ON DELETE CASCADE, user_id INTEGER, created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP);`;
+        const createBookingsTable = `CREATE TABLE IF NOT EXISTS bookings (id SERIAL PRIMARY KEY, event_id INTEGER REFERENCES events(id) ON DELETE CASCADE, user_id VARCHAR(100), created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP);`;
         await client.query(createBookingsTable);
     } catch (error) {
         console.error('ERROR creating tables:', error);

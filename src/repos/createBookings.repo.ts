@@ -12,10 +12,10 @@ export const createBookings = async (body: IBookings) => {
     }
 
     const isSavedToTemp = await saveToTempVal(body);
-    const query: string = `INSERT INTO bookings (event_id, user_id) VALUES (${body.event_id}, ${body.user_id})`;
+    const query: string = `INSERT INTO bookings (event_id, user_id) VALUES (${body.event_id}, '${body.user_id}');`;
     try {
         const result = await client.query(query);
-    } catch (error) {
-        throw Error('Error executing query');
+    } catch (err) {
+        console.error('Error executing query', err);
     }
 }
