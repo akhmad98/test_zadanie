@@ -1,7 +1,6 @@
 import { getFromFastAccess } from "../repos/shared/getTemprorary.ts";
 import { saveToTempVal } from "./shared/saveTemprory.ts";
 import client from '../config/outsideQueriesDb.ts';
-import type { IBody } from "../interfaces/IBody.ts";
 import type { IBookings } from "../interfaces/IBookings.ts";
 
 export const createBookings = async (body: IBookings) => {

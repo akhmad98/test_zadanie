@@ -1,5 +1,3 @@
-import { IBookings } from "../interfaces/IBookings"
-import { getFromFastAccess } from "./shared/getTemprorary"
 import client from '../config/outsideQueriesDb.ts';
 import { cleanTemporary } from "./shared/clenTemporary.ts";
 
